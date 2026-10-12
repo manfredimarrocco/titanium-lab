@@ -1,6 +1,6 @@
 # TITANIUM · GRC Tools & Lab
 
-Versione **0.2.3**, 12 ottobre 2026.
+Versione **0.2.4**, 12 ottobre 2026.
 
 TITANIUM è un workspace dimostrativo per audit, con dati sintetici iniziali. Applicazione statica nel browser: nessun account, database, invio di dati o salvataggio cloud. File e cataloghi non vengono caricati su WordPress. Il codice della demo precedente rimane distinto dai workbook originali: nessun materiale cliente o VBA è incluso.
 
@@ -21,7 +21,7 @@ Completamento: tutti gli esiti assegnati, NA compresa, sul totale. Indice sugli 
 ## Installazione WordPress
 
 1. Verificare il tema, i plugin, le pagine e gli shortcode correnti. Usare un template pagina che esegua il contenuto WordPress.
-2. Installare `mm-grc-lab-0.2.3.zip`. Il plugin non crea pagine, non scrive impostazioni, non aggiunge endpoint e non cambia il tema. Carica i propri asset soltanto sulle pagine singole contenenti `[mm_grc_lab]`.
+2. Installare `mm-grc-lab-0.2.4.zip`. Il plugin non crea pagine, non scrive impostazioni, non aggiunge endpoint e non cambia il tema. Carica i propri asset soltanto sulle pagine singole contenenti `[mm_grc_lab]`.
 3. Creare una pagina **bozza** dal titolo `Lab`, slug `lab`, senza genitore, commenti chiusi, con un solo blocco Shortcode: `[mm_grc_lab]`. La demo è incorporata nella pagina e raggiungibile con `#titanium`.
 4. Impostare titolo SEO `Lab — TITANIUM, strumenti GRC dimostrativi` e descrizione `Esplora TITANIUM: demo GRC nel browser con dati sintetici, cataloghi di requisiti, grafici, import Excel e report. Nessun account o salvataggio cloud.` attraverso Yoast già presente. Canonical previsto `/lab/`. Nessun codice Person, canonical o structured data duplicato dal plugin.
 5. Verificare anteprima WordPress, desktop/mobile, shortcode, iframe, import/export, stampa, fonti e download. I controlli locali non sostituiscono le prove nell’installazione di destinazione.
@@ -33,7 +33,7 @@ La demo statica è `noindex,nofollow`; la pagina Lab resta l’URL editoriale pr
 
 Il repository applicativo è separato dal repository del profilo. Non aggiungere materiali personali, dati di audit o contenuti cliente ai sorgenti.
 
-Distribuire questa cartella come sorgente e associare alla versione `v0.2.3` i pacchetti plugin ZIP, standalone ZIP e template XLSX. WordPress serve la demo dalla propria installazione; GitHub serve codice, versioni e download. Nessun servizio automatico o token runtime necessario.
+Distribuire questa cartella come sorgente e associare alla versione `v0.2.4` i pacchetti plugin ZIP, standalone ZIP e template XLSX. WordPress serve la demo dalla propria installazione; GitHub serve codice, versioni e download. Nessun servizio automatico o token runtime necessario.
 
 Configurare gli attributi `repository` e `download` dello shortcode (oppure i filtri `mm_grc_lab_repository_url` e `mm_grc_lab_download_url`) solo con URL HTTPS verificati del repository e della versione scaricabile. Il plugin ammette esclusivamente host `github.com`; senza configurazione i link sono nascosti. Gli aggiornamenti del plugin sono manuali e vanno provati prima della distribuzione.
 
@@ -43,4 +43,4 @@ Leggere `THIRD-PARTY-NOTICES.md` per fonti, versioni, attribuzione e copertura e
 
 ## Verifiche
 
-La release 0.2.0 ha superato le prove funzionali locali su Edge (cataloghi, importazione del vero template, duplicati e aggiornamenti atomici, XLSX/JSON, NA, perimetro, azioni, snapshot e stampa). La candidata 0.2.3 aggiunge l’integrazione e le protezioni documentate nel CHANGELOG; validazione locale e relativo limite WordPress sono registrati nel master operativo condiviso. Non include telemetria, build remota, dipendenze CDN o servizi a pagamento.
+La release 0.2.0 ha superato le prove funzionali locali su Edge (cataloghi, importazione del vero template, duplicati e aggiornamenti atomici, XLSX/JSON, NA, perimetro, azioni, snapshot e stampa). La candidata 0.2.4 aggiunge l’integrazione e le protezioni documentate nel CHANGELOG; validazione locale e relativo limite WordPress sono registrati nel master operativo condiviso. Non include telemetria, build remota, dipendenze CDN o servizi a pagamento.

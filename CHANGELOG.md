@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.4 — 2026-10-12
+
+- Allineata alla release la versione interna usata da interfaccia, report e nuovi file di lavoro.
+- URL degli asset e dell’applicativo con versione esplicita per evitare copie obsolete nella cache.
+
 ## 0.2.3 — 2026-10-12
 
 - Collegamenti repository e download configurabili negli attributi dello shortcode, con controllo HTTPS e host GitHub; nessun URL personale nei sorgenti.

@@ -22,7 +22,7 @@
   </section>
 
   <section class="mm-lab-demo" id="titanium" aria-labelledby="mm-lab-demo-title">
-    <div class="mm-lab-section-head"><div><p class="mm-lab-eyebrow">01 / Applicativo disponibile</p><h2 id="mm-lab-demo-title">TITANIUM <span>v0.2.3 · demo</span></h2></div><div class="mm-lab-demo-tools"><a href="<?php echo esc_url($app_url); ?>" target="_blank" rel="noopener noreferrer">Apri in una scheda ↗</a><button type="button" data-mm-expand hidden>Espandi demo</button></div></div>
+    <div class="mm-lab-section-head"><div><p class="mm-lab-eyebrow">01 / Applicativo disponibile</p><h2 id="mm-lab-demo-title">TITANIUM <span>v0.2.4 · demo</span></h2></div><div class="mm-lab-demo-tools"><a href="<?php echo esc_url($app_url); ?>" target="_blank" rel="noopener noreferrer">Apri in una scheda ↗</a><button type="button" data-mm-expand hidden>Espandi demo</button></div></div>
     <p class="mm-lab-demo-description">Prova l’audit sintetico oppure avvia un nuovo audit senza giudizi. Importa il template Excel, consulta i grafici e genera un report stampabile.</p>
     <div class="mm-lab-workspace" data-mm-workspace>
       <div class="mm-lab-launcher" data-mm-launcher><span class="mm-lab-launch-icon" aria-hidden="true">T</span><h3>Il tuo spazio di audit</h3><p>La demo lavora nel browser. I dati importati non vengono inviati a servizi esterni; per conservarli, scarica il file di lavoro JSON prima di chiudere.</p><button type="button" class="mm-lab-button mm-lab-button-primary" data-mm-launch>Avvia la demo <span aria-hidden="true">→</span></button><noscript><p>Per usare TITANIUM attiva JavaScript e <a href="<?php echo esc_url($app_url); ?>">apri l’applicativo</a>.</p></noscript></div>
