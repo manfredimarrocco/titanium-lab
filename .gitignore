@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.xlsm
+*-lavoro-*.json
+TITANIUM-*.csv
+TITANIUM-*.xlsx
+!TITANIUM-template.xlsx
