@@ -1,5 +1,9 @@
 # Fonti, attribuzione e limiti
 
+**License scope:** MIT covers original TITANIUM code and original documentation only. It does not relicense official catalogs, third-party publications or imported content. Keep this notice and the JSZip license with every plugin or standalone distribution.
+
+Verifica della distribuzione del 12 ottobre 2026: decompressi i ZIP pubblicati v0.2.3/v0.2.4; notifiche NIST e licenza JSZip presenti. Per v0.2.4 i file applicativi coincidono con i sorgenti verificati. I 203 testi NIS2 corrispondono ai fogli ACN; i testi dei 521 punti RUC sono riscontrabili nel PDF ufficiale dopo normalizzazione di spazi e rimozione delle intestazioni di pagina. Questo confronto testuale non attesta completezza normativa, correttezza di ogni classificazione o applicabilità organizzativa.
+
 Verifica fonti: 12 ottobre 2026. I cataloghi sono copie statiche o schede di riferimento, non banche dati sincronizzate né baseline obbligatorie per ogni organizzazione. TITANIUM non è affiliato o approvato da ACN, NIST, ISO, CIS, CINI o Sapienza.
 
 | Catalogo | Contenuto incluso | Fonte |

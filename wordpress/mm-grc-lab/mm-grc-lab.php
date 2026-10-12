@@ -2,7 +2,7 @@
 /**
  * Plugin Name: TITANIUM — GRC Lab
  * Description: Presentazione del Lab e workspace TITANIUM nel browser, senza servizi di salvataggio.
- * Version: 0.2.4
+ * Version: 0.2.5
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: TITANIUM contributors
@@ -15,13 +15,13 @@ if (!defined('ABSPATH')) { exit; }
 function mm_grc_lab_assets() {
     $post = get_post();
     if (!is_singular() || !$post || !has_shortcode($post->post_content, 'mm_grc_lab')) { return; }
-    wp_enqueue_style('mm-grc-lab', plugins_url('assets/lab.css', __FILE__), array(), '0.2.4');
-    wp_enqueue_script('mm-grc-lab', plugins_url('assets/lab.js', __FILE__), array(), '0.2.4', true);
+    wp_enqueue_style('mm-grc-lab', plugins_url('assets/lab.css', __FILE__), array(), '0.2.5');
+    wp_enqueue_script('mm-grc-lab', plugins_url('assets/lab.js', __FILE__), array(), '0.2.5', true);
 }
 add_action('wp_enqueue_scripts', 'mm_grc_lab_assets', 110);
 
 function mm_grc_lab_shortcode($atts = array()) {
-    $app_url = add_query_arg('ver', '0.2.4', plugins_url('app/index.html', __FILE__));
+    $app_url = add_query_arg('ver', '0.2.5', plugins_url('app/index.html', __FILE__));
     $template_url = plugins_url('app/TITANIUM-template.xlsx', __FILE__);
     $atts = shortcode_atts(array('repository' => '', 'download' => ''), $atts, 'mm_grc_lab');
     // URLs belong to the page configuration, not the distributed source files.

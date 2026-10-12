@@ -1,46 +1,75 @@
-# TITANIUM · GRC Tools & Lab
+# TITANIUM — GRC Audit Lab
 
-Versione **0.2.4**, 12 ottobre 2026.
+A browser-based workspace for selecting requirements, recording evidence, assessing gaps and planning actions. TITANIUM is an open-source demonstration with an Italian interface and synthetic initial data. Judgments are manual; it does not certify compliance.
 
-TITANIUM è un workspace dimostrativo per audit, con dati sintetici iniziali. Applicazione statica nel browser: nessun account, database, invio di dati o salvataggio cloud. File e cataloghi non vengono caricati su WordPress. Il codice della demo precedente rimane distinto dai workbook originali: nessun materiale cliente o VBA è incluso.
+**[Try the WordPress demo](https://manfredimarrocco.blog/lab/#titanium)** · **[Download v0.2.5](https://github.com/manfredimarrocco/titanium-lab/releases/tag/v0.2.5)** · **[Technical guide](docs/TECHNICAL.md)**
 
-## Avvio e utilizzo
+Version 0.2.5 is a demonstration pre-release.
 
-Aprire `wordpress/mm-grc-lab/app/index.html` con Edge, Chrome o Firefox. Il pacchetto standalone conserva la stessa struttura e si apre direttamente da file locale. Per visualizzare anche l’anteprima della pagina Lab aprire `preview/index.html` nella cartella di revisione. Nell’anteprima aperta da file la demo si avvia in una scheda autonoma, perché l’iframe isolato non può eseguire script locali; su HTTP/HTTPS è incorporata nella pagina.
+## Features and use cases
 
-L’audit sintetico illustra le funzioni. «Nuovo audit» crea requisiti senza giudizi. «Cataloghi» aggiunge riferimenti al perimetro; per NIS2 selezionare il profilo applicabile. «Requisiti & audit» gestisce esiti, evidenze, maturità, gap e azioni. «Report» genera un riepilogo o dettaglio stampabile: il PDF si salva dalla stampa del browser. Scaricare il lavoro JSON prima di chiudere; il reload ripristina la demo iniziale. JSON conserva perimetro, metadata, rilevazioni e registro; XLSX conserva i 25 campi dei requisiti, non lo storico.
+- Create an audit without synthetic judgments; select scope and add versioned catalogs with source references.
+- Record outcomes, evidence references, maturity, gaps, actions, owners and deadlines.
+- Explore outcome distribution, framework comparisons, maturity radar, action urgency heatmap, deadline bars and explicitly recorded progress snapshots.
+- Import XLSX/CSV with column mapping and validation preview; export requirement XLSX, action-plan CSV or a complete JSON work file.
+- Generate summary/detail reports and save PDF through browser printing.
 
-## Importazione Excel
+Use TITANIUM to learn audit workflows, discuss governance decisions or prototype assessments with synthetic data. Review applicability, sources and methodology before any real professional use. No automatic mapping proves compliance or equivalence between frameworks.
 
-Usare `TITANIUM-template.xlsx`: fogli Audit/Guida, 25 colonne, menu di validazione e tre righe sintetiche da sostituire. XLSX/CSV: massimo 5 MB e 5.000 requisiti complessivi. Nessuna formula o macro; XLSX con date 1904 viene rifiutato. Date testuali `AAAA-MM-GG` consigliate. La chiave è Framework + Versione + Codice. L’anteprima distingue aggiunte e aggiornamenti; i campi presenti, anche vuoti, aggiornano la voce, quelli assenti vengono conservati. Un errore impedisce l’intera importazione. «Non applicabile» richiede una motivazione. Le copie ufficiali possono richiedere associazione delle colonne e separazione dei requisiti prima dell’importazione: non è un lettore universale di formati editoriali.
+## Quick start
 
-## Metodo
+1. Download `TITANIUM-0.2.5-standalone.zip` from the release above and extract it.
+2. Open `TITANIUM/index.html` in a current Edge, Chrome or Firefox browser.
+3. Explore the synthetic Orion audit or choose **Nuovo audit** to start with unevaluated requirements.
+4. Use **Salva lavoro** to download JSON before closing. Reloading restores the initial demonstration.
 
-Completamento: tutti gli esiti assegnati, NA compresa, sul totale. Indice sugli esiti valutati: (Conforme + 0,5 × Parzialmente conforme) / (Conforme + Parzialmente conforme + Non conforme); NA e Da valutare esclusi. L’indice legacy è mostrato separatamente. La maturità 0–5 è un criterio locale, non un Tier NIST. Il triage considera severità, scadenza, responsabile ed evidenze e rende visibili i contributi. Le rilevazioni storiche vengono registrate esplicitamente per lo stesso perimetro. Chiudere un’azione non modifica il giudizio. ID evidenza uguali collegano riferimenti senza attribuire equivalenza fra requisiti. Nessun risultato costituisce certificazione o valutazione automatica della conformità.
+No server, account or paid service is required. Repository source opens at `wordpress/mm-grc-lab/app/index.html`. The plugin ZIP integrates the same app with an existing WordPress site; installation details are in the technical guide. WordPress hosts the public demo; GitHub provides source history and downloads.
 
-## Installazione WordPress
+## Included catalogs
 
-1. Verificare il tema, i plugin, le pagine e gli shortcode correnti. Usare un template pagina che esegua il contenuto WordPress.
-2. Installare `mm-grc-lab-0.2.4.zip`. Il plugin non crea pagine, non scrive impostazioni, non aggiunge endpoint e non cambia il tema. Carica i propri asset soltanto sulle pagine singole contenenti `[mm_grc_lab]`.
-3. Creare una pagina **bozza** dal titolo `Lab`, slug `lab`, senza genitore, commenti chiusi, con un solo blocco Shortcode: `[mm_grc_lab]`. La demo è incorporata nella pagina e raggiungibile con `#titanium`.
-4. Impostare titolo SEO `Lab — TITANIUM, strumenti GRC dimostrativi` e descrizione `Esplora TITANIUM: demo GRC nel browser con dati sintetici, cataloghi di requisiti, grafici, import Excel e report. Nessun account o salvataggio cloud.` attraverso Yoast già presente. Canonical previsto `/lab/`. Nessun codice Person, canonical o structured data duplicato dal plugin.
-5. Verificare anteprima WordPress, desktop/mobile, shortcode, iframe, import/export, stampa, fonti e download. I controlli locali non sostituiscono le prove nell’installazione di destinazione.
-6. Pubblicare soltanto dopo autorizzazione. Aggiungere un collegamento da Progetti mediante una modifica separata e minima, verificando anche la resa; la navigazione globale non viene alterata dal pacchetto. Non occorre un sito Cloudflare o GitHub Pages.
+Static snapshot checked on 12 October 2026: **9 catalogs, 2,086 entries**. These are not synchronized databases or universally applicable baselines.
 
-La demo statica è `noindex,nofollow`; la pagina Lab resta l’URL editoriale principale. L’iframe usa un’origine isolata tramite sandbox, con script, download, stampa e apertura delle fonti consentiti. La demo blocca le connessioni tramite CSP. Il sito WordPress può avere i propri strumenti analytics: la promessa di assenza di invio riguarda i dati dell’applicativo, non le richieste della pagina pubblica.
+| Reference | Coverage | Limits |
+|---|---|---|
+| NIS2 — ACN 379907/2025 | 87 important-entity or 116 essential-entity requirements | Annexes 1–2 security measures; incident annexes excluded. Select the applicable profile. |
+| NIST CSF 2.0 | 106 active Core subcategories in English | No automatic conformity or Tier assignment. |
+| NIST SP 800-53 Rev. 5, release 5.2.0 | 1,014 active controls and enhancements | Withdrawn entries excluded; parameters require definition; no baseline selected automatically. |
+| RUC — ACN 21007/24 | 254 annex-2 infrastructure and 267 annex-3 cloud-service points | Cumulative profiles; articles, uncoded provisions and annex 4 excluded. Not the entire qualification procedure. |
+| FNCDP 2025 v2.1 | 106 identifiers and original audit questions | Official descriptive text is not redistributed. |
+| ISO/IEC 27001:2022 + Amd 1:2024 | 25 original management-system prompts and 93 Annex A identifiers | No full standard or official Annex A titles. Consult an authorized copy and determine applicability. |
+| CIS Controls v8.1 | 18 original Control-level prompts | No 153 Safeguards or Implementation Group assignments. |
 
-## Integrazione GitHub
+See [third-party notices](THIRD-PARTY-NOTICES.md) for editions, sources, attribution and transformations. Official requirements, original prompts and local assessment rules have different roles.
 
-Il repository applicativo è separato dal repository del profilo. Non aggiungere materiali personali, dati di audit o contenuti cliente ai sorgenti.
+## Import and export
 
-Distribuire questa cartella come sorgente e associare alla versione `v0.2.4` i pacchetti plugin ZIP, standalone ZIP e template XLSX. WordPress serve la demo dalla propria installazione; GitHub serve codice, versioni e download. Nessun servizio automatico o token runtime necessario.
+Use [TITANIUM-template.xlsx](https://github.com/manfredimarrocco/titanium-lab/releases/download/v0.2.5/TITANIUM-template.xlsx): 25 requirement fields, Audit/Guida sheets and three synthetic examples to replace. XLSX/CSV imports are capped at 5 MB and 5,000 total requirements. VBA and date-system 1904 are rejected. The reader does not execute formulas: use plain values and text dates `YYYY-MM-DD`.
 
-Configurare gli attributi `repository` e `download` dello shortcode (oppure i filtri `mm_grc_lab_repository_url` e `mm_grc_lab_download_url`) solo con URL HTTPS verificati del repository e della versione scaricabile. Il plugin ammette esclusivamente host `github.com`; senza configurazione i link sono nascosti. Gli aggiornamenti del plugin sono manuali e vanno provati prima della distribuzione.
+Rows match on **Framework + Versione + Codice**. Review mapping before applying. Present columns, including empty cells, update fields; absent columns preserve them. Validation errors reject the whole import. **Non applicabile** requires a reason. Publisher workbooks may need restructuring; this is not a universal standards-file parser.
 
-## Fonti e diritti
+JSON retains metadata, scope, rows, snapshots and activity log. XLSX retains the 25 requirement fields, not complete project history. Action-plan CSV is a focused export. Imported content remains subject to its own rights; do not commit or redistribute it without permission.
 
-Leggere `THIRD-PARTY-NOTICES.md` per fonti, versioni, attribuzione e copertura effettiva. ISO, CIS e FNCDP non contengono testi normativi completi nel pacchetto pubblico candidato. Materiali importati dall’utilizzatore rimangono locali e non devono essere aggiunti ai sorgenti del repository. Licenza MIT per il solo codice originale; le condizioni dei contenuti di terzi rimangono distinte e sono descritte negli avvisi.
+## Local processing and privacy
 
-## Verifiche
+Audit data is processed in browser memory. There is no account, database, automatic persistent storage, cloud save or runtime API. The app's Content Security Policy blocks network connections; the embedded view has a sandboxed origin. Evidence fields contain text references, not uploaded attachments.
 
-La release 0.2.0 ha superato le prove funzionali locali su Edge (cataloghi, importazione del vero template, duplicati e aggiornamenti atomici, XLSX/JSON, NA, perimetro, azioni, snapshot e stampa). La candidata 0.2.4 aggiunge l’integrazione e le protezioni documentate nel CHANGELOG; validazione locale e relativo limite WordPress sono registrati nel master operativo condiviso. Non include telemetria, build remota, dipendenze CDN o servizi a pagamento.
+The surrounding WordPress page can still make hosting/analytics requests. Browser extensions and device security are outside the app's guarantee; source links open external sites. Exports and reports contain whatever the user enters and must be protected accordingly. The standalone distribution can be used off the public website.
+
+## Scoring and limitations
+
+- **Completion:** assigned judgments, including justified not-applicable entries, divided by in-scope requirements.
+- **Judged-outcome index:** `(Conforme + 0.5 × Parzialmente conforme) / (Conforme + Parzialmente conforme + Non conforme)`. Unevaluated and not-applicable entries are excluded; no evaluated entries means no score.
+- **Legacy index:** separate display with a different denominator, including unevaluated applicable entries.
+- **Maturity:** local 0–5 scale, distinct from NIST Tiers. Triage exposes severity, overdue actions, missing ownership and incomplete evidence contributions.
+
+Closing an action does not change its judgment. Progress snapshots refer to the same selected scope. Catalogs differ in scope and granularity; percentages are not automatic conformity comparisons. No score is a certification, legal opinion or assurance conclusion. Calculation details are in the technical guide.
+
+## Contributing
+
+Use [issues](https://github.com/manfredimarrocco/titanium-lab/issues) for reproducible defects and scoped proposals, and pull requests for changes. Include synthetic examples, browser details and the affected version. Catalog changes require an official source, edition, coverage and redistribution conditions. Preserve notices and test affected import/export and scoring flows. Never submit customer workbooks, real findings, credentials or confidential evidence.
+
+## License
+
+Original code and original documentation are [MIT licensed](LICENSE), permitting reuse and modification, including commercial use, subject to MIT conditions. **MIT does not relicense third-party standards, official source material or user-imported content.** NIST attribution/modification notices and JSZip's MIT notice accompany their respective contents. ISO, CIS and FNCDP prompts are original references, not copies of their publications. Preserve [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) with every distribution.
+
+See the [technical guide](docs/TECHNICAL.md) for installation, shortcode configuration, catalogs, imports, reports, limits and manual updates, and the [changelog](CHANGELOG.md) for version history.

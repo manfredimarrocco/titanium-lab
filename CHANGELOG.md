@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.5 — 2026-10-12 · pre-release
+
+- English public README and separate technical guide.
+- Third-party notices included directly in the plugin source directory and carried with both distributions.
+- MIT scope clarified in notices, downloadable documentation and Lab copy; unchanged MIT license text.
+- Published v0.2.3/v0.2.4 ZIPs inspected: NIST/JSZip notices already present; no withdrawal or catalog removal required by these checks.
+- ACN text comparison documented with its limits; no catalog entries or assessment features removed.
+- Candidate version/cache references aligned to 0.2.5.
+
 ## 0.2.4 — 2026-10-12
 
 - Allineata alla release la versione interna usata da interfaccia, report e nuovi file di lavoro.
